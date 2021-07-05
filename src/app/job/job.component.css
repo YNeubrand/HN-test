@@ -1,0 +1,106 @@
+h3 {
+  font-size: 29px;
+  margin: 0 0 5px 5px;
+  padding: 30px 0 0 15px;
+}
+
+pagination-controls {
+  text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+  background-color: dodgerblue;
+  margin-top: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+  h3
+  {
+      font-size: 18px;
+      margin-top: 0;
+      padding: 0 0 0 10px;
+  }
+  pagination-controls
+  {
+    font-size: 80%;
+    margin: 0;
+    padding: 0;
+  }
+
+}
+
+.box
+{
+    padding: 0 10px;
+    width: 100%;
+}
+
+ul {
+  padding: 0;
+  position: relative;
+}
+
+ul li {
+  color: black;
+  border-left: solid 10px #5c9ee7;
+  background: #f1f8ff;
+  margin-left: 25px;
+  margin-bottom: 2px;
+  line-height: 1.5;
+  border-radius: 0 15px 15px 0;
+  padding: 0.5em;
+  padding-right: 100px;
+  list-style-type: none;
+  border-bottom: solid 2px #dadada;
+}
+
+.box .news a {
+  padding-top: 20px;    float: left;
+  color: black;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 0 20px 0 10px;
+}
+.box .news a:hover {
+  color: blue;
+}
+
+.news .host {
+  padding-top: 28px;
+  color: dimgray;
+  font-size: 15px;
+}
+
+
+.small {
+  clear: left;
+  color: dimgray;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.small .time {
+  padding-left: 10px;
+  margin-right: 10px;
+}
+
+.small .time i {
+  padding-right: 4px;
+}
+@media only screen and (max-width: 600px) {
+  .box
+  {
+    display: block;
+    margin: 0 auto;
+  }
+  .box a
+  {
+      font-size: 14px;
+      text-align: left;
+  }
+  .box
+  {
+    padding: 2px 2px;
+  }
+}

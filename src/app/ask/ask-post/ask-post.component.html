@@ -1,0 +1,26 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<div *ngIf="post">
+  <div class="clip-box-a">
+    <div *ngFor="let showPost of post">
+      <h2>{{ showPost.title }}</h2>
+      <div class="small">
+        <ul>
+          <li><div class="score"><i class="fa fa-thumbs-o-up "></i> score: {{ showPost.score }} {{ (showPost.score < 2) ? 'point' : 'points' }}</div></li>
+          <li><div class="time"><i class="fa fa-clock-o "></i>{{ getTime(showPost.time)}} {{ dateTime }}</div></li>
+          <li><div class="comment"><i class="fa fa-comments-o "><span>{{ showPost.descendants }}</span></i></div></li>
+        </ul>
+        <div class="user"><i class="fa fa-user "></i><a id="user" routerLink="/user/{{ showPost.by }}"> {{ showPost.by }}</a></div>
+      </div>
+      <div class="text" [innerHTML]="showPost.text">{{ showPost.text }}</div>
+      <div *ngIf="showPost.kids">
+      </div>
+    </div>
+  </div>
+    <div class="box">
+      <h4>Comments:</h4>
+      <app-comment [comment]="comment" *ngFor="let comment of articleComments"></app-comment>
+    </div>
+</div>

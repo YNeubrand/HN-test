@@ -1,0 +1,35 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+ <div *ngIf="article?.title">
+      <div class="box">
+        <ul>
+          <li>
+            <div class="news">
+              <div class="title">
+                <div *ngIf="article.text; else url">
+                  <a routerLink="/ask-post/{{ article.id }}">{{ article.title }}</a>
+                </div>
+                <ng-template #url>
+                <a href="{{ article.url }}" target="_blank">
+                {{ article.title }}</a></ng-template></div>
+              <div class="host"><app-get-host-name [url]="article.url"></app-get-host-name></div>
+            </div>
+              <div class="small">
+                <span class="score"><i class="fa fa-thumbs-o-up "></i> score: {{ article.score }} {{ (article.score < 2) ? 'point' : 'points' }}</span>
+                <span class="user"><i class="fa fa-user "></i> by<a id="user" routerLink="/user/{{ article.by }}"> {{ article.by }}</a></span>
+                <span class="time"><i class="fa fa-clock-o "></i><app-time-ago [time]="article.time"></app-time-ago></span>
+                <span class="comment">
+                <span  id="comment" (click)="onCommentClick()">
+                  <i class="fa fa-comments-o "><a class="numberOfComment"> {{ article.descendants }}</a></i>
+                </span>
+                </span>
+              </div>
+                <div *ngIf="displayComments">
+                  <app-comment [comment]="comment" *ngFor="let comment of articleComments"></app-comment>
+                </div>
+          </li>
+        </ul>
+      </div>
+  </div>
+

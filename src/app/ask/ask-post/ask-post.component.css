@@ -1,0 +1,128 @@
+.clip-box-a {
+  position: relative;
+  margin: 2em auto;
+  padding: 15px 35px 15px 25px;
+  width: 90%;
+  background-color: #fff;
+  color: #555555;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #acacac;
+}
+.clip-box-a::before {
+  position: absolute;
+  content: '';
+  top: -15px;
+  right: 10px;
+  height: 55px;
+  width: 15px;
+  border: 3px solid #555555;
+  background-color: none;
+  border-radius: 12px;
+  box-shadow: 1px 1px 2px #999;
+  transform: rotate(10deg);
+  z-index: 1;
+}
+.clip-box-a::after {
+  position: absolute;
+  content: '';
+  top: 0px;
+  width: 10px;
+  right: 20px;
+  border: solid 5px #fff;
+  z-index: 2;
+}
+h2 {
+  position: relative;
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid #000;
+  border-left: 3px solid #000;
+  border-radius: 0 0 0 20px;
+  text-align: center;
+}
+h2:before {
+  position: absolute;
+  right: 50px;
+  bottom: -21px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 21px 21px 0 0;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}
+h2:after {
+  position: absolute;
+  right: 54px;
+  bottom: -14px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-width: 14px 14px 0 0;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+.text{
+  background-color: #fff;
+  background-image:
+  linear-gradient(90deg, rgba(237, 119, 128, 0) 0%, rgba(237, 119, 128, 0) 50%, #fff 0%, #fff 100%), linear-gradient(180deg, rgba(237, 119, 128, 0) 0%, rgba(237, 119, 128, 0) 95%, hsl(240, 2%, 39%) 100%);
+  background-size: 8px 100%,100% 2em;
+  line-height: 2;
+  padding: 0em 1em 1.98em 1em;
+  color: black;
+  margin: 0;
+  font-weight: bold;
+}
+.user{
+  text-align: right;
+  margin: 15px 20px 0 0;
+  font-size: 30px;
+}
+#user{
+  color: black;
+  text-decoration: none;
+}
+#user:hover{
+  color: blue;
+}
+ul {
+  padding: 0;
+  position: relative;
+  margin-left: 18px;
+
+}
+ul li {
+  color: dimgray;
+  font-size: 16px;
+  list-style-type: none;
+  display: inline;
+  float: left;
+}
+.score {
+  float: left;
+  margin-right: 8px;
+}
+.time {
+  padding-left: 8px;
+  margin-right: 8px;
+}
+.time i {
+  padding-right: 3px;
+}
+.comment {
+  clear: left;
+  margin-left: 8px;
+}
+.comment i {
+  font-size: 16px;
+}
+.comment span{
+  font-family: sans-serif;
+  margin-left: 5px;
+}
+.box{
+  margin: 0 30px;
+}
+.box h4
+{
+  margin-left: 10px;
+}

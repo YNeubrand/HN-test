@@ -1,0 +1,43 @@
+<div class="box">
+
+  <div class="comment-thread">
+
+      <div *ngIf="!(comment.deleted)">
+
+        <details open class="comment" id=comment.id >
+          <div class="comment-border-link">
+            <span class="sr-only"></span>
+          </div>
+          <summary>
+            <div class="comment-heading">
+              <div class="comment-info">
+                <i class="fa fa-commenting-o "></i>
+                <a class="comment-author" routerLink="/user/{{ comment.by }}">{{ comment.by }}</a>
+                <p class="time"><i class="fa fa-clock-o "></i> <app-time-ago [time]="comment.time"></app-time-ago>
+                </p>
+              </div>
+            </div>
+          </summary>
+
+
+      <div class="comment-body">
+        <p  [innerHTML]="comment.text">
+          {{ comment.text }}
+        </p>
+        <!-- <button type="button">Reply</button> -->
+      </div>
+
+      <div class="replies">
+        <div *ngIf="comment.kids">
+          <div *ngFor="let kidComment of kidsComments">
+            <app-comment [comment]="kidComment"></app-comment>
+          </div>
+        </div>
+      </div>
+
+    </details>
+
+    </div>
+
+  </div>
+  </div>

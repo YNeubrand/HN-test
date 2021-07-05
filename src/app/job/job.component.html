@@ -1,0 +1,45 @@
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<div class="container-fluid mt-3">
+
+  <div class="row">
+
+    <h3><i class="fa fa-newspaper-o "></i> Jobs</h3>
+
+      <div class="article" *ngFor="let article of this.articles |
+        paginate:
+        {
+          itemsPerPage: 15,
+          currentPage: page,
+          totalItems: totalLength
+        }">
+
+        <div *ngIf="article?.title">
+          <div class="box">
+            <ul>
+              <li>
+                <div class="news">
+                  <div class="title">
+                    <div *ngIf="article.text; else url">
+                      <a routerLink="/ask-post/{{ article.id }}">{{ article.title }}</a>
+                    </div>
+                    <ng-template #url>
+                    <a href="{{ article.url }}" target="_blank">
+                    {{ article.title }}</a></ng-template></div>
+                  <div class="host"><app-get-host-name [url]="article.url"></app-get-host-name></div>
+                </div>
+                      <div class="small">
+                    <span class="time"><i class="fa fa-clock-o "></i><app-time-ago [time]="article.time"></app-time-ago></span>
+                  </div>
+              </li>
+            </ul>
+          </div>
+      </div>
+
+    </div>
+
+  <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="container-fluid mt-3">
+  <div class="row">
+    <div *ngIf="userInfo">
+      <div *ngFor="let user of userInfo">
+        <h3><i class="fa fa-newspaper-o "></i>{{ user.id }}'s submissions</h3>
+      </div>
+    </div>
+    <app-article [article]="article" class="article" *ngFor="let article of this.articles |
+      paginate:
+      {
+        itemsPerPage: 15,
+        currentPage: page,
+        totalItems: totalLength
+      }">
+  </app-article>
+  <pagination-controls class="my-pagination" (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+
+@media only screen and (max-width: 600px) {
+  nav
+  {
+      padding: 5px;
+      font-size: 15px;
+  }
+}
+
+.navbar-brand {
+  font-size: 35px;
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-weight: bold;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: dimgray;
+  font-size: 20px;
+  font-family: 'Odibee Sans', cursive;
+  /* padding: 10px 10px 20px 10px; */
+  margin-top: 20px;
+  border-radius: 3px;
+}
+.nav-link:hover {
+  background-color: white;
+  border-width: 3px;
+}
+div #navbarNav {
+  padding: 10px 10px 0 10px;
+  margin-bottom: 0;
+}
+.loadert-container{
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+

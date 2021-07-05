@@ -1,0 +1,78 @@
+.memox{
+  font-family: Chalkduster, fantasy;
+  position:relative;
+  background:#fffde7;
+  width:85%;
+  margin:60px auto;
+  padding:1.5em 1em 3em 1em;
+  transform: rotate(-2deg);
+  box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+  color:#795548;
+  }
+  .memox .name{
+  margin: 30px 30px 20px 30px;
+  position:relative;
+  display:inline-block;
+  border-bottom:3px solid #795548;
+  border-radius: 0 0 40% 5% / 0 0 15% 20%;
+  padding:0 1em 0.1em 0.2em;
+  font-size:35px;
+  font-weight:bold;
+  transform: rotate(-5deg);
+  }
+  .memox::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:-15px;
+  margin-left:-75px;
+  width:150px;
+  height:30px;
+  background:rgba(245,245,245,0.7);
+  box-shadow:1px 1px 4px rgba(0,0,0,0.2);
+  transform: rotate(-4deg);
+  }
+  .memox .info ol{
+  margin:1em 0.5em 0 3em;
+  padding:0 0 0 0;
+  }
+  .memox .info ol li{
+    padding: 5px;
+    margin-bottom:0.5em;
+    list-style-type: none;
+    display: flex;
+    /* justify-content: center; */
+    align-items: baseline;
+    overflow: auto;
+  }
+  .memox .info ol li h1{
+    padding: 0;
+    margin: 0;
+    float: left;
+    font-family: Chalkduster, fantasy;
+  }
+  .detail{
+    padding: 0;
+    margin-left: 12px;
+    vertical-align:top;
+    font-size: 27px;
+    max-width: 90%;
+    line-height: 35px;
+  }
+  .memox .links {
+    padding: 20px 0;
+  }
+  .memox .links ol li{
+    padding-top: 10px;
+    margin: 0;
+    text-align: center;
+    list-style-type: none;
+    font-size: 17px;
+}
+.memox .links ol li a{
+  color:#795548;
+  text-decoration: underline;
+}
+.memox .links ol li a:hover{
+  color:blue;
+}

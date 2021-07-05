@@ -1,0 +1,39 @@
+<div class="box">
+
+  <div *ngFor="let comment of articleComments">
+
+    <div class="comment-thread">
+
+      <div *ngIf="comment.by == id">
+        <details open class="comment" id=comment.id >
+          <div class="comment-border-link">
+            <span class="sr-only"></span>
+          </div>
+          <summary>
+            <div class="comment-heading">
+              <div class="comment-info">
+                <i class="fa fa-commenting-o "></i>
+                <a class="comment-author" routerLink="/user/{{ comment.by }}">{{ comment.by }}</a>
+                <p class="time"><i class="fa fa-clock-o "></i> <app-time-ago [time]="comment.time"></app-time-ago>
+                </p>
+              </div>
+            </div>
+          </summary>
+
+          <div class="comment-body">
+            <p  [innerHTML]="comment.text">
+              {{ comment.text }}
+            </p>
+
+          </div>
+
+          <div class="replies">
+            <div *ngIf="comment.kids">
+              <app-comment [comment]="comment"></app-comment>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>

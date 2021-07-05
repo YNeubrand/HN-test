@@ -1,0 +1,22 @@
+<div *ngIf="userInfo">
+  <div *ngFor="let user of userInfo">
+
+        <div class="memox">
+          <div class="name"><i class="fa fa-user "></i> {{ user.id }}</div>
+            <div class="info">
+              <ol>
+                <li><h2>SINCE:</h2><div class="detail"> {{ time(user.created) }}</div></li>
+                <li><h2>KARMA:</h2><div class="detail"> {{ user.karma }}</div></li>
+                <li><h2>ABOUT:</h2><div class="detail" [innerHTML]="user.about"> {{ user.about }}</div></li>
+              </ol>
+            </div>
+                <div class="links">
+                  <ol>
+                    <li><a routerLink="/submission/{{ user.id }}"> - Submissions - </a></li>
+                    <li><a routerLink="/user-comment/{{ user.id }}"> - comments - </a></li>
+                  </ol>
+              </div>
+        </div>
+
+  </div>
+</div>
